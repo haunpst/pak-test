@@ -1,0 +1,15 @@
+body {
+  margin: auto;
+  background-color: #eee;
+
+  .container {
+    height: 100vh;
+
+    .border-gradient {
+      border: 5px solid;
+      border-image-slice: 1;
+      border-radius: inherit;
+      border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    }
+  }
+}
