@@ -10,4 +10,9 @@ class tbl_Product extends Model
     use HasFactory;
 
     protected $table = 'tbl_Product';
+
+    public function category()
+    {
+        return $this->belongsTo(tbl_Category::class, 'category_id');
+    }
 }
