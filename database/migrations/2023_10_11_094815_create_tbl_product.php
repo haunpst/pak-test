@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('tbl_Product', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('code')->nullable();
             $table->string('name');
             $table->string('unit');
-            $table->decimal('price', 10, 2);
+            $table->string('image')->nullable();
+            $table->string('description')->nullable();
+            $table->decimal('price', 15, 2);
             $table->timestamps();
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('tbl_Category');

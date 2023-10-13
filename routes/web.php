@@ -15,10 +15,10 @@ Route::post('register', [AuthController::Class, 'register'])->name('register.pos
 
 Route::middleware('auth:web')->group(function () {
     Route::get('', [ProductController::class, 'index'])->name('product.list');
-    Route::get('store', [ProductController::class, 'store'])->name('product.store');
-    Route::post('store', [ProductController::class, 'store'])->name('product.store.post');
-    Route::get('edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
-    Route::put('edit/{id}', [ProductController::class, 'edit'])->name('product.edit.put');
-    Route::delete('delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+    Route::get('product/store', [ProductController::class, 'store'])->name('product.store');
+    Route::post('product/store', [ProductController::class, 'store'])->name('product.store.post');
+    Route::get('product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit.put');
+    Route::delete('product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 });
 
