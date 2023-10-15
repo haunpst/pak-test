@@ -47,9 +47,9 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-6">
-                            <label for="category" class="form-label">Nhóm sản phẩm <span
+                            <label for="category_id" class="form-label">Nhóm sản phẩm <span
                                         class="text-danger">*</span></label>
-                            <select name="category" id="category" class="form-select" required>
+                            <select name="category_id" id="category_id" class="form-select" required>
                                 <option value="">--- Chọn nhóm sản phẩm ---</option>
                                 @foreach($category as $i)
                                     <option value="{{$i->id}}">{{$i->name}}</option>
