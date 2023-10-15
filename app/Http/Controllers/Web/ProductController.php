@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use App\Models\tbl_Category;
 use App\Models\tbl_Product;
 use Illuminate\Http\Request;
-use function PHPUnit\Framework\isEmpty;
 
 class ProductController extends Controller
 {
@@ -52,11 +52,6 @@ class ProductController extends Controller
         }
         $category = tbl_Category::all();
         return view('addon.product.create', compact('category'));
-    }
-
-    public function edit(Request $request, $id)
-    {
-
     }
 
     public function delete($id)
