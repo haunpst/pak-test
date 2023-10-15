@@ -16,12 +16,11 @@ return new class extends Migration
             $table->string('code')->nullable();
             $table->string('name');
             $table->string('unit');
-            $table->string('image')->nullable();
             $table->string('description')->nullable();
             $table->decimal('price', 15, 2);
-            $table->timestamps();
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('tbl_Category');
+            $table->timestamps();
         });
     }
 

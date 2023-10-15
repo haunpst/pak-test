@@ -22,9 +22,8 @@ class AuthWebController extends Controller
             if (Auth::attempt($validate)) {
                 return redirect()->route('product.list');
             } else {
-                return redirect()->back()->withErrors([
-                    'warning' => 'Tên đăng nhập hoặc mật khẩu không đúng',
-                ]);
+                return redirect()->back()
+                    ->withErrors(['error' => 'Tên đăng nhập hoặc mật khẩu không đúng']);
             }
         }
         return view('auth.login');
@@ -65,7 +64,7 @@ class AuthWebController extends Controller
                 $user->username = $request->username;
                 $user->password = Hash::make($request->password);
                 $user->save();
-                return redirect()->route('login')->with(['success' => 'Đăng ký tài khoản thành công!']);
+                return redirect()->route('login')->with('success', 'Đăng ký tài khoản thành công!');
             } catch (\Throwable $e) {
                 return redirect()->back()->withErrors(['error' => 'Xảy ra lỗi, vui lòng thử lại!']);
             }

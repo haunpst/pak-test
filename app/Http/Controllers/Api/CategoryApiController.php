@@ -13,5 +13,4 @@ class CategoryApiController extends Controller
         return response()->json($data);
     }
 
-
 }
