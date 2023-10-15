@@ -34,9 +34,6 @@
                 <td>{{date_format($i->created_at, 'd/m/Y')}}</td>
                 <td>{{date_format($i->updated_at, 'd/m/Y')}}</td>
                 <td>
-                    <a href="{{route('product.edit', $i->id)}}" class="btn text-decoration-none">
-                        <i class="bi bi-pencil-square text-warning"></i>
-                    </a>
                     <button class="btn delete-product" data-id="{{ $i->id }}">
                         <i class="bi bi-trash3 text-danger"></i>
                     </button>

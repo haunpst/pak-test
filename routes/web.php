@@ -1,16 +1,15 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Web\AuthWebController;
+use App\Http\Controllers\Web\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('login', [AuthController::Class, 'login'])->name('login');
-Route::post('login', [AuthController::Class, 'login'])->name('login.post');
-Route::get('logout', [AuthController::Class, 'logout'])->name('logout');
-Route::get('register', [AuthController::Class, 'register'])->name('register');
-Route::post('register', [AuthController::Class, 'register'])->name('register.post');
+Route::get('login', [AuthWebController::Class, 'login'])->name('login');
+Route::post('login', [AuthWebController::Class, 'login'])->name('login.post');
+Route::get('logout', [AuthWebController::Class, 'logout'])->name('logout');
+Route::get('register', [AuthWebController::Class, 'register'])->name('register');
+Route::post('register', [AuthWebController::Class, 'register'])->name('register.post');
 
 
 Route::middleware('auth:web')->group(function () {
